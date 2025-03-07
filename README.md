@@ -1,6 +1,6 @@
 A project under development(still in incubation) for fast developing of MVPs(Minimum Viable Products), corporate apps or PoCs(Proof Of Concepts) among others using your own tech stack and make easy scalability, high availability, resource-efficient, cost-effective solutions as well as Green Coding.
 
-The idea is to create apps just with configuration(No code) o extends functitonality using Go or your prefered Tech Stack.
+The idea is to create apps just with configuration(No code) or extends functitonality using Go or your prefered Tech Stack(Java, Python, ...).
 
 If you are interested, please contact Albert Coronado.
 
