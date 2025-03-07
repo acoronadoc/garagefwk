@@ -1,0 +1,168 @@
+database:
+  host: 172.17.0.2:3306
+  username: root
+  password: 123456
+  db: devops
+
+menus:
+  sidebarmenu:
+    - title: MAIN
+      childs:
+        - href: /
+          title: Dashboard
+        - href: /code
+          title: Código
+        - href: /servers
+          title: Servidores
+        - href: /credentials
+          title: Credenciales
+
+screens:
+  - url: "/"
+    scrtype: function
+    options:
+      package: main
+      function: Dashboard
+
+  - url: "/code"
+    scrtype: list
+    options:
+      dataobject: code
+      title: "Repositorios"
+      toolbar:
+        - url: /code/-1
+          label: "+ Añadir"
+      regurl: /code/${id}
+      columns:
+        - name: "name"
+          label: "Nombre"
+        - name: "status"
+          label: "Estado"          
+        - name: "url"
+          label: "URL"          
+
+  - url: "/servers"
+    scrtype: list
+    options:
+      dataobject: server
+      title: "Servidores"
+      toolbar:
+        - url: /servers/-1
+          label: "+ Añadir"
+      regurl: /servers/${id}
+      columns:
+        - name: "name"
+          label: "Nombre"
+        - name: "status"
+          label: "Estado"          
+        - name: "host"
+          label: "Host:IP"          
+
+  - url: "/credentials"
+    scrtype: list
+    options:
+      dataobject: credential
+      title: "Credenciales"
+      toolbar:
+        - url: /credentials/-1
+          label: "+ Añadir"
+      regurl: /credentials/${id}
+      columns:
+        - name: "name"
+          label: "Nombre"
+        - name: "type"
+          label: "Tipo"          
+
+  - url: "/code/${id}"
+    scrtype: form
+    options:
+      dataobject: code
+      title: "Repositorio"
+      returnurl: "/code"
+      fields:
+        - name: "name"
+          label: "Nombre"
+          mandatory: true
+        - name: "status"
+          label: "Estado"
+          type: select
+          options:
+            - value: "1"
+              label: "Habilitado"
+            - value: "0"
+              label: "Deshabilitado"
+        - name: "url"
+          label: "URL"
+          mandatory: true
+        - name: "branch"
+          label: "Rama"
+          mandatory: true          
+
+  - url: "/servers/${id}"
+    scrtype: form
+    options:
+      dataobject: server
+      title: "Servidor"
+      returnurl: "/servers"
+      fields:
+        - name: "name"
+          label: "Nombre"
+          mandatory: true
+        - name: "status"
+          label: "Estado"
+          type: select
+          options:
+            - value: "1"
+              label: "Habilitado"
+            - value: "0"
+              label: "Deshabilitado"
+        - name: "host"
+          label: "Host:IP"
+          mandatory: true
+
+
+  - url: "/credentials/${id}"
+    scrtype: form
+    options:
+      dataobject: credential
+      title: "Credenciales"
+      returnurl: "/credentials"
+      fields:
+        - name: "name"
+          label: "Nombre"
+          mandatory: true
+        - name: "type"
+          label: "Tipo"
+          type: select
+          options:
+            - value: "username"
+              label: "Username / Password"
+            - value: "ssh"
+              label: "SSH"
+          mandatory: true
+        - name: "username"
+          label: "Nombre de usuario"
+          mandatory: false
+          visibleif: 
+            field: type
+            eq: username
+        - name: "password"
+          label: "Password"
+          visibleif: 
+            field: type
+            eq: username
+          mandatory: false
+        - name: "sshpublic"
+          label: "Clave pública SSH"
+          type: textarea
+          visibleif: 
+            field: type
+            eq: ssh
+          mandatory: false
+        - name: "sshprivate"
+          label: "Clave privada SSH"
+          type: textarea
+          visibleif: 
+            field: type
+            eq: ssh
+          mandatory: false          

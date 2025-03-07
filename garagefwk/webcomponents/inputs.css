@@ -1,0 +1,37 @@
+
+.app-textbox-wrapper {
+    padding: 8px;
+    margin: 15px;
+    border:  1px solid #999;
+    border-radius: 3px;
+}
+
+.app-textbox-wrapper.focus {
+    box-shadow: 0px 0px 6px  rgba(0,0,0,.5);
+}
+.app-textbox-wrapper label {
+    position: absolute;
+    margin-top: 1px;
+    font-size: 17px;
+    padding: 0px  6px;
+    transition: margin-top 0.25s, font-size 0.25s;
+}
+
+.app-textbox-wrapper.full label {
+    margin-top: -17px;
+    font-size: 14px;
+    background-color: #fff;
+    transition: margin-top 0.25s, font-size 0.25s;
+}
+
+.app-textbox-wrapper input, .app-textbox-wrapper select, .app-textbox-wrapper textarea {
+    font-family: sans-serif;
+    width: 100%;
+    border-width: 0px;
+    font-size: 17px;
+    background-color: transparent;
+}
+
+.app-textbox-wrapper input:focus, .app-textbox-wrapper select:focus, .app-textbox-wrapper textarea:focus {
+    outline: none;
+}

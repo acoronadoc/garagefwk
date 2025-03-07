@@ -1,0 +1,84 @@
+
+#headerside {
+    z-index: 997;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 0px;
+    background: #fff;
+    color: #a6a8aa;
+    box-shadow: 0 2px 3px #032d461f
+}
+
+#headerside #ham-main-menu {
+    color: #a6a8aa;
+    font-size: 24px;
+    text-decoration: none;
+    float: left;
+}
+
+#headerside #ham-main-menu::after {
+    padding: 20px 30px;
+    padding-top: 17px;
+    content: url( 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>' );
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+#header-bg {
+    z-index: 998;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background-color: #333;
+}
+
+#header-right {
+    z-index: 999;
+    width: 250px;
+    height: calc(100% - 60px);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 30px;
+    float: left;
+    overflow: hidden;
+    vertical-align: top;
+    border-right: 1px solid #e6e8ea;
+    background-color: #fff;
+    text-align: left;
+}
+
+#header-menu {
+    display: none;
+}
+
+#header-menu.open {
+    display: block;
+}
+
+#header-right .title {
+    padding: 10px 5px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #a6a8aa;
+}
+
+#header-right a {
+    color: #000;
+    text-decoration: none;
+}
+
+#header-right .optionmenu {
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#header-right .optionmenu:hover {
+    background-color: #e6e8ea77;
+}

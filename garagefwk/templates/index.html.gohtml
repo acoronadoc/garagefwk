@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="publisher" content="" />
+		<title></title>
+
+        <link rel="stylesheet" href="/fonts/Roboto/roboto.css">
+	</head>
+	<body>
+        <app-menubar sidebarmenu='{{ $.sidebarmenu }}'></app-menubar>
+
+        <div id="appcontent"></div>
+
+		<style>
+			{{ $.css }}
+		</style>
+		<script>
+			{{ $.js }}
+		</script>        
+    </body>
+</html>
